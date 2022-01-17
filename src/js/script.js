@@ -185,7 +185,7 @@
             price -= option.price;
           }
           // find image 'category-option'
-          const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
+          const optionImage = thisProduct.imageWrapper.querySelector(`${paramId}${optionId}`);
 
 
           // check if there is an image

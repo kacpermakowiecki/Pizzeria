@@ -22,6 +22,7 @@ dataSource.products = {
       coffee: {
         label: 'Coffee type',
         type: 'radios',
+        pirce: 9,
         options: {
           latte: {label: 'Latte', price: 1, default: true},
           cappuccino: {label: 'Cappuccino', price: 1},
