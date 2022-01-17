@@ -179,13 +179,13 @@
             }
 
             // check if the option is default
-          } else if (option.default === true) {  //(option.default)
+          } else if (option.default == true) {  //(option.default)
 
             //reduce option price to variable
             price -= option.price;
           }
           // find image 'category-option'
-          const optionImage = thisProduct.imageWrapper.querySelector(`${paramId}${optionId}`);
+          const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
 
 
           // check if there is an image
