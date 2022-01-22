@@ -318,8 +318,9 @@
   class AmountWidget {
     constructor(element) {
       const thisWidget = this;
+
       thisWidget.getElements(element);
-      thisWidget.setValue(settings.amountWidget.defaultValue);
+      thisWidget.setValue(thisWidget.input.value);
       thisWidget.initActions();
 
       console.log('AmountWidget:', thisWidget);
@@ -333,6 +334,8 @@
       thisWidget.input = thisWidget.element.querySelector(select.widgets.amount.input);
       thisWidget.linkDecrease = thisWidget.element.querySelector(select.widgets.amount.linkDecrease);
       thisWidget.linkIncrease = thisWidget.element.querySelector(select.widgets.amount.linkIncrease);
+      thisWidget.value = settings.amountWidget.defaultValue;
+
     }
 
     setValue(value) {
@@ -376,8 +379,6 @@
       });
       thisWidget.element.dispatchEvent(event);
     }
-
-
   }
 
   class Cart {
@@ -477,7 +478,7 @@
       console.log('total price', thisCart.dom.totalPrice);
     }
 
-    remove(cartProduct){
+    remove(cartProduct) {
       const thisCart = this;
 
       thisCart.products = thisCart.products.filter(product => product !== cartProduct);
@@ -527,7 +528,7 @@
       });
     }
 
-    remove(){
+    remove() {
       const thisCartProduct = this;
 
       const event = new CustomEvent('remove', {
@@ -540,13 +541,13 @@
       thisCartProduct.dom.wrapper.dispatchEvent(event);
     }
 
-    initActions(){
-      const thisCartProduct = this; 
+    initActions() {
+      const thisCartProduct = this;
 
-      thisCartProduct.dom.edit.addEventListener('click', function(event){
+      thisCartProduct.dom.edit.addEventListener('click', function (event) {
         event.preventDefault();
       });
-      thisCartProduct.dom.remove.addEventListener('click', function(event){
+      thisCartProduct.dom.remove.addEventListener('click', function (event) {
         event.preventDefault();
         thisCartProduct.remove();
       });
