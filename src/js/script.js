@@ -320,7 +320,7 @@
       const thisWidget = this;
 
       thisWidget.getElements(element);
-      thisWidget.setValue(thisWidget.input.value);
+      thisWidget.setValue (thisWidget.input.value || settings.amountWidget.defaultValue);
       thisWidget.initActions();
 
       console.log('AmountWidget:', thisWidget);
@@ -334,8 +334,6 @@
       thisWidget.input = thisWidget.element.querySelector(select.widgets.amount.input);
       thisWidget.linkDecrease = thisWidget.element.querySelector(select.widgets.amount.linkDecrease);
       thisWidget.linkIncrease = thisWidget.element.querySelector(select.widgets.amount.linkIncrease);
-      thisWidget.value = settings.amountWidget.defaultValue;
-
     }
 
     setValue(value) {
