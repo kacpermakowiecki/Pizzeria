@@ -598,7 +598,7 @@
 
     getData() {
       const thisCartProduct = this;
-      thisCartProduct.dataSummary = {
+      const dataSummary = {
         id: thisCartProduct.id,
         name: thisCartProduct.name,
         amount: thisCartProduct.amount,
